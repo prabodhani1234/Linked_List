@@ -14,14 +14,14 @@ class Node:
     def getNext(self):
         return self.next
 
-    def setNext(self, address1):
-        self.next = address1
+    def setNext(self, addressA):
+        self.next = addressA
 
     def getPrev(self):
         return self.prev
 
-    def setPrev(self, address2):
-        self.prev = address2
+    def setPrev(self, addressB):
+        self.prev = addressB
 
     def hasNext(self):
         return self.next is not None
