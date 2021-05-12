@@ -121,17 +121,21 @@ class DoublyLinkedList:
                     print("This Element in Doubly Linked List :", count) # print count number
 
                     # printing next node and previous node of search element node
-                    if current.getNext() is None:
+                    if current.getNext() is None: # checking next of current node is none
+                        # equaling data of previous node of current node to currentPrev variable
                         currentPrev = current.prev.getData()
-                        currentNext = "None"
+                        currentNext = "None" # equaling "None" to currentNext variable
 
-                    elif current.getPrev() is None:
-                        currentPrev = "None"
+                    elif current.getPrev() is None: # checking previous of current node is none
+                        currentPrev = "None" # equaling "None" to currentPrev variable
+                        # equaling data of next node of current node to currentNext variable
                         currentNext = current.next.getData()
                     else:
-                        currentNext = current.next.getData()
+                        # equaling data of previous node of current node to currentPrev variable
                         currentPrev = current.prev.getData()
-
+                        # equaling data of next node of current node to currentNext variable
+                        currentNext = current.next.getData()
+                    # print next and previous node
                     print('\nPrevious Node is :{} \nNext Node is :{}'.format(currentPrev, currentNext))
-                current = current.getNext()
+                current = current.getNext() # equaling next of current node to current
                 count += 1
