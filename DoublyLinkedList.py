@@ -27,7 +27,7 @@ class DoublyLinkedList:
                 current = current.getNext()  # making next of current node as current
 
     # this function reverse all linked
-    def printBackward(self):
+    def printBackwardList(self):
         if self.head is None:  # checking head node is none
             print("Empty Doubly Linked List")
         else:
@@ -64,6 +64,24 @@ class DoublyLinkedList:
             current.setNext(newNode)  # making new node as next of current
             newNode.setPrev(current)  # making current as previous of new node
         self.length += 1
+
+    def addNodeInPos(self, pos, data):
+        if pos < self.length - 1 and pos < 0:
+            return None
+        elif pos == self.length - 1:
+            self.addNodeEnd(data)
+        elif pos == 0:
+            self.addNodeBeginning(data)
+        else:
+            newNode = Node(data)
+            current = self.head
+            for i in range(0, pos - 1):
+                current = current.getNext()
+
+            newNode.setPrev(current)
+            newNode.setNext(current.next)
+            current.next.setPrev(newNode)
+            current.setNext(newNode)
 
     # delete first node of the doubly linked list
     def deleteFirstNode(self):
@@ -103,9 +121,9 @@ class DoublyLinkedList:
                 while count != Pos - 1: # checking position mines one not equal to count
                     count += 1
                     current = current.getNext() # equaling next of current node as current
-                # equaling next of next node of current node to next of current node
+                # equaling next of next node in current node to next of current node
                 current.setNext(current.next.getNext())
-                # equaling current node to previous of next of current node
+                # equaling current node to previous of next node in current node
                 current.next.setPrev(current)
             self.length -= 1
 
