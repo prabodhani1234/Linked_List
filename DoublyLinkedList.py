@@ -32,7 +32,7 @@ class DoublyLinkedList:
             print("Empty Doubly Linked List")
         else:
             newNode = self.head
-            while newNode.getNext() is not None:# running until next of new node is none
+            while newNode.getNext() is not None:  # running until next of new node is none
                 newNode = newNode.getNext()  # making next of new node as new node
             while newNode is not None:  # if new node is not none
                 print(newNode.data)  # print data of new node
@@ -40,7 +40,7 @@ class DoublyLinkedList:
 
     # add new node in the beginning
     def addNodeBeginning(self, data):
-        newNode = Node(data) # getting node expect data into new node
+        newNode = Node(data)  # getting node expect data into new node
         newNode.setData(data)
         if self.head is None:  # checking head Node is Node
             self.head = newNode  # making new node as head node
@@ -65,5 +65,73 @@ class DoublyLinkedList:
             newNode.setPrev(current)  # making current as previous of new node
         self.length += 1
 
+    # delete first node of the doubly linked list
+    def deleteFirstNode(self):
+        if self.head is None:
+            print("Empty Doubly Linked List")
+        else:
+            self.head = self.head.getNext()  # equaling next of head node to head node
+            self.head.setPrev(None)  # set previous of head as none
+        self.length -= 1
 
+    # delete last node of the doubly linked list
+    def deleteLastNode(self):
+        if self.head is None:
+            print("Empty Doubly Linked List")
+        else:
+            current = self.head  # equaling head node to current
+            previous = None # equaling previous node of current node to none
+            while current.getNext() is not None: # running next of current node is none
+                previous = current # equaling current node to previous node
+                current = current.getNext() # equaling next of current node to current node
+            previous.setNext(None) # set next of previous node as none
+        self.length -= 1
 
+    # delete given position node
+    def deleteNodeByPos(self, Pos):
+        if self.head is None:
+            print("Empty Doubly Linked List")
+            return None
+        if self.length > Pos > -1: # checking length greater than position and one mines less than position
+            if Pos == 0: # checking position is equal to zero
+                self.deleteFirstNode() # running deleteFirstNode function
+            elif Pos == self.length - 1: # checking position is equal to length mines one
+                self.deleteLastNode() # running deleteLastNode function
+            else:
+                count = 0
+                current = self.head
+                while count != Pos - 1: # checking position mines one not equal to count
+                    count += 1
+                    current = current.getNext() # equaling next of current node as current
+                # equaling next of next node of current node to next of current node
+                current.setNext(current.next.getNext())
+                # equaling current node to previous of next of current node
+                current.next.setPrev(current)
+            self.length -= 1
+
+    # search element of doubly linked list
+    def searchNodeByPos(self, element):
+        if self.head is None:
+            print("Empty Doubly Linked List")
+        else:
+            current = self.head
+            count = 0
+            while current is not None: # checking current is not none
+                if current.getData() == element: # checking search element equal to data of current node
+                    print("This Element in Doubly Linked List :", count) # print count number
+
+                    # printing next node and previous node of search element node
+                    if current.getNext() is None:
+                        currentPrev = current.prev.getData()
+                        currentNext = "None"
+
+                    elif current.getPrev() is None:
+                        currentPrev = "None"
+                        currentNext = current.next.getData()
+                    else:
+                        currentNext = current.next.getData()
+                        currentPrev = current.prev.getData()
+
+                    print('\nPrevious Node is :{} \nNext Node is :{}'.format(currentPrev, currentNext))
+                current = current.getNext()
+                count += 1
