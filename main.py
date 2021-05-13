@@ -12,7 +12,6 @@ linkedList.addNodeEnd(5)
 linkedList.addNodeBeginning(0)
 linkedList.addNodeEnd(6)
 linkedList.addNodeInPos(4,4)
-
 linkedList.printForwardList()
 
 print("\nDeleted First Node in Doubly Linked List :")
