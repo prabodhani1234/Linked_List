@@ -11,9 +11,9 @@ class DoublyLinkedList:
     def doublyListLength(self):
         current = self.head  # create current variable as head node
         count = 0  # creating count as zero
-        while current is not None:  # checking current node is not none
+        while current is not None:  # traversing until current node is none
             count += 1
-            current = current.getNext()  # change current as next of current node
+            current = current.getNext()  # change next of current as current
         return count
 
     # this function print contend of all doubly linked
@@ -22,9 +22,9 @@ class DoublyLinkedList:
             print("Empty Doubly Linked List")
         else:
             current = self.head
-            while current is not None:  # checking current node is not none
+            while current is not None:  # traversing until current node is none
                 print(current.getData())  # print data of current node
-                current = current.getNext()  # change current as next of current node
+                current = current.getNext()  # change next of current as current
 
     # this function reverse all linked
     def printBackwardList(self):
@@ -63,6 +63,7 @@ class DoublyLinkedList:
                 current = current.getNext()  # change next of current as current
             current.setNext(newNode)  # create next of current as new node
             newNode.setPrev(current)  # create previous of new node as current
+            newNode.setNext(None)  # create next of new node as none
         self.length += 1
 
     # add new node in given position of the doubly linked list
@@ -104,7 +105,7 @@ class DoublyLinkedList:
             while current.getNext() is not None:  # traversing until the last node in the list
                 previous = current  # change current as previous
                 current = current.getNext()  # change next of current as current
-            previous.setNext(None)  # create next of precious as none
+            previous.setNext(None)  # create next of previous as none
         self.length -= 1
 
     # delete given position node
@@ -120,7 +121,7 @@ class DoublyLinkedList:
             else:
                 count = 0
                 current = self.head
-                while count != Pos - 1:  #
+                while count != Pos - 1:  # traversing until the previous node before the position
                     count += 1
                     current = current.getNext()  # change next of current as current
                 # create next of current as next of next in current
