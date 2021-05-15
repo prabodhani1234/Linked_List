@@ -138,7 +138,7 @@ class DoublyLinkedList:
             print("Empty Doubly Linked List")
         else:
             current = self.head
-            count = 0
+            count = 1
             while current is not None:  # traversing until current node is none
                 if current.getData() == element:  # checking search element equal to data of current node
                     print("This Element in Doubly Linked List :", count)  # print count number
@@ -146,18 +146,18 @@ class DoublyLinkedList:
                     # printing next node and previous node of search element node
                     if current.getNext() is None:  # checking next of current node is none
                         # assign data of previous in current node to currentPrev variable
-                        currentPrev = current.prev.getData()
+                        currentPrev = current.getPrev().getData()
                         currentNext = "None"  # assign "None" string to currentNext variable
 
                     elif current.getPrev() is None:  # checking previous of current node is none
                         currentPrev = "None"  # assign "None" string to currentPrev variable
                         # assign data of next in current node to currentNext variable
-                        currentNext = current.next.getData()
+                        currentNext = current.getNext().getData()
                     else:
                         # assign data of previous in current node to currentPrev variable
-                        currentPrev = current.prev.getData()
+                        currentPrev = current.getPrev().getData()
                         # assign data of next in current node to currentNext variable
-                        currentNext = current.next.getData()
+                        currentNext = current.getNext().getData()
                     # print next and previous node
                     print('\nPrevious Node is :{} \nNext Node is :{}'.format(currentPrev, currentNext))
                 current = current.getNext()  # change next of current as current
