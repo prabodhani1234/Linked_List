@@ -84,8 +84,8 @@ class DoublyLinkedList:
                 current = current.getNext()  # change next of current as current
                 count += 1
             newNode.setPrev(current)  # create previous of new node as current
-            newNode.setNext(current.next)  # create next of new node as next of current
-            current.next.setPrev(newNode)  # create previous of next in current as new node
+            newNode.setNext(current.getNext())  # create next of new node as next of current
+            current.getNext().setPrev(newNode)  # create previous of next in current as new node
             current.setNext(newNode)  # create next of current as new node
 
     # delete first node of the doubly linked list
