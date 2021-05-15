@@ -77,10 +77,12 @@ class DoublyLinkedList:
             self.addNodeBeginning(data)  # running addNodeBeginning
         else:
             newNode = Node(data)
+            newNode.setData(data)
             current = self.head
-            for i in range(0, pos - 1):  # traversing until the previous node before the position
+            count = 0
+            while count != pos - 1:  # traversing until the previous node before the position
                 current = current.getNext()  # change next of current as current
-
+                count += 1
             newNode.setPrev(current)  # create previous of new node as current
             newNode.setNext(current.next)  # create next of new node as next of current
             current.next.setPrev(newNode)  # create previous of next in current as new node
