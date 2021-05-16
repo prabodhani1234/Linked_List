@@ -133,7 +133,7 @@ class DoublyLinkedList:
             self.length -= 1
 
     # search element of doubly linked list
-    def searchNodeByPos(self, value):
+    def searchValue(self, value):
         if self.head is None:
             print("Empty Doubly Linked List")
         else:
