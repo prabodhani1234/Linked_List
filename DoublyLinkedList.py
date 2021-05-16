@@ -26,7 +26,7 @@ class DoublyLinkedList:
                 print(current.getData())  # print data of current node
                 current = current.getNext()  # change next of current as current
 
-    # this function reverse all linked
+    # this function print to reverse contend of all doubly linked
     def printBackwardList(self):
         if self.head is None:  # checking head node is none
             print("Empty Doubly Linked List")
@@ -133,15 +133,15 @@ class DoublyLinkedList:
             self.length -= 1
 
     # search element of doubly linked list
-    def searchNodeByPos(self, element):
+    def searchNodeByPos(self, value):
         if self.head is None:
             print("Empty Doubly Linked List")
         else:
             current = self.head
-            count = 1
+            count = 0
             while current is not None:  # traversing until current node is none
-                if current.getData() == element:  # checking search element equal to data of current node
-                    print("This Element in Doubly Linked List :", count)  # print count number
+                if current.getData() == value:  # checking search element equal to data of current node
+                    print("This value in Doubly Linked List :", count)  # print count number
 
                     # printing next node and previous node of search element node
                     if current.getNext() is None:  # checking next of current node is none
