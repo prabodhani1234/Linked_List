@@ -33,6 +33,6 @@ linkedList.deleteLastNode()
 linkedList.printForwardList()
 
 print("\n\nDoubly Linked List Element Search")
-linkedList.searchNodeByPos(2)
+linkedList.searchValue(2)
 
 
