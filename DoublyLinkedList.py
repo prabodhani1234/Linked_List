@@ -129,8 +129,7 @@ class DoublyLinkedList:
                 # create a deleteNode variable and next of current assign it
                 deleteNode = current.getNext()
                 current.setNext(deleteNode.getNext())  # create next of deleteNode as next of current
-                currentNewNext = current.getNext()  # create a currentNewNext variable and next of current
-                currentNewNext.setPrev(current)  # create previous of currentNewNext as current
+                current.getNext().setPrev(current)  # create previous of next in current as current
             self.length -= 1
 
     # search element of doubly linked list
