@@ -127,9 +127,9 @@ class DoublyLinkedList:
                     count += 1
                     current = current.getNext()  # change next of current as current
                 # create next of current as next of next in current
-                current.setNext(current.next.getNext())
+                current.setNext(current.getNext().getNext())
                 # create previous of next in current as current
-                current.next.setPrev(current)
+                current.getNext().setPrev(current)
             self.length -= 1
 
     # search element of doubly linked list
