@@ -126,10 +126,11 @@ class DoublyLinkedList:
                 while count != Pos - 1:  # traversing until the previous node before the position
                     count += 1
                     current = current.getNext()  # change next of current as current
-                # create next of current as next of next in current
-                current.setNext(current.getNext().getNext())
-                # create previous of next in current as current
-                current.getNext().setPrev(current)
+                # create a deleteNode variable and next of current assign it
+                deleteNode = current.getNext()
+                current.setNext(deleteNode.getNext())  # create next of deleteNode as next of current
+                currentNewNext = current.getNext()  # create a currentNewNext variable and next of current
+                currentNewNext.setPrev(current)  # create previous of currentNewNext as current
             self.length -= 1
 
     # search element of doubly linked list
