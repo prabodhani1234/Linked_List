@@ -141,7 +141,7 @@ class DoublyLinkedList:
             count = 0
             while current is not None:  # traversing until current node is none
                 if current.getData() == value:  # checking search element equal to data of current node
-                    print("This value in Doubly Linked List :", count)  # print count number
+                    print("This value Position is :", count)  # print count number
 
                     # printing next node and previous node of search element node
                     if current.getNext() is None:  # checking next of current node is none
