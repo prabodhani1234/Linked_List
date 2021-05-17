@@ -162,6 +162,6 @@ class DoublyLinkedList:
                         currentNext = current.getNext().getData()
 
                     # print next and previous node
-                    print('\nPrevious Node is :{} \nNext Node is :{}'.format(currentPrev, currentNext))
+                    print("\nPrevious Node is\t: {} \nNext Node is\t\t: {}".format(currentPrev, currentNext))
                 current = current.getNext()  # change next of current as current
                 count += 1
