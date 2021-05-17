@@ -31,12 +31,12 @@ class DoublyLinkedList:
         if self.head is None:  # checking head node is none
             print("Empty Doubly Linked List")
         else:
-            newNode = self.head
-            while newNode.getNext() is not None:  # traversing until next of newNode is none
-                newNode = newNode.getNext()  # change next of new node as new node
-            while newNode is not None:  # traversing until newNode is none
-                print(newNode.getData(), end=" ")  # print data of new node
-                newNode = newNode.getPrev()  # change previous of new node as new node
+            current = self.head
+            while current.getNext() is not None:  # traversing until next of current is none
+                current = current.getNext()  # change next of new node as current
+            while current is not None:  # traversing until current is none
+                print(current.getData(), end=" ")  # print data of current
+                current = current.getPrev()  # change previous of current as current
 
     # add new node to the beginning
     def addNodeBeginning(self, data):
