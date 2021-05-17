@@ -23,7 +23,7 @@ class DoublyLinkedList:
         else:
             current = self.head
             while current is not None:  # traversing until current node is none
-                print(current.getData())  # print data of current node
+                print(current.getData(),end=" ")  # print data of current node
                 current = current.getNext()  # change next of current as current
 
     # this function print to reverse contend of all doubly linked
@@ -35,7 +35,7 @@ class DoublyLinkedList:
             while newNode.getNext() is not None:  # traversing to last node in the list
                 newNode = newNode.getNext()  # change next of new node as new node
             while newNode is not None:  # traversing until first node in the list
-                print(newNode.data)  # print data of new node
+                print(newNode.getData(),end=" ")  # print data of new node
                 newNode = newNode.getPrev()  # change previous of new node as new node
 
     # add new node to the beginning
