@@ -38,7 +38,7 @@ class DoublyLinkedList:
                 print(newNode.data)  # print data of new node
                 newNode = newNode.getPrev()  # change previous of new node as new node
 
-    # add new node in the beginning
+    # add new node to the beginning
     def addNodeBeginning(self, data):
         newNode = Node(data)
         newNode.setData(data)
@@ -51,7 +51,7 @@ class DoublyLinkedList:
             self.head = newNode  # change new node as head node
         self.length += 1  # adding one to length
 
-    # add new node in the end of the doubly linked list
+    # add new node to the end of the doubly linked list
     def addNodeEnd(self, data):
         newNode = Node(data)
         newNode.setData(data)
@@ -66,7 +66,7 @@ class DoublyLinkedList:
             newNode.setNext(None)  # create next of new node as none
         self.length += 1
 
-    # add new node in given position of the doubly linked list
+    # add new node to given position of the doubly linked list
     def addNodeInPos(self, pos, data):
         # checking position is greater than length mines one or position is less than zero
         if pos > self.length - 1 or pos < 0:
@@ -143,7 +143,8 @@ class DoublyLinkedList:
                 if current.getData() == value:  # checking search element equal to data of current node
                     print("This value Position is :", count)  # print count number
 
-                    # printing next node and previous node of search element node
+                    # printing next node and previous node to search value node
+
                     if current.getNext() is None:  # checking next of current node is none
                         # assign data of previous in current node to currentPrev variable
                         currentPrev = current.getPrev().getData()
@@ -158,6 +159,7 @@ class DoublyLinkedList:
                         currentPrev = current.getPrev().getData()
                         # assign data of next in current node to currentNext variable
                         currentNext = current.getNext().getData()
+                        
                     # print next and previous node
                     print('\nPrevious Node is :{} \nNext Node is :{}'.format(currentPrev, currentNext))
                 current = current.getNext()  # change next of current as current
