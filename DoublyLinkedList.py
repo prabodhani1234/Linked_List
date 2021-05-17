@@ -74,7 +74,7 @@ class DoublyLinkedList:
         elif pos == self.length - 1:  # checking position is equal to length mines one
             self.addNodeEnd(data)  # running addNodeEnd function
         elif pos == 0:  # checking position is equal to zero
-            self.addNodeBeginning(data)  # running addNodeBeginning
+            self.addNodeBeginning(data)  # running addNodeBeginning function
         else:
             newNode = Node(data)
             newNode.setData(data)
