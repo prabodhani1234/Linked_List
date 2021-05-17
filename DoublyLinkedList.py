@@ -9,7 +9,7 @@ class DoublyLinkedList:
 
     # Doubly Linked List length size
     def doublyListLength(self):
-        current = self.head  # create current variable as head node
+        current = self.head  # create current as head node
         count = 0  # creating count as zero
         while current is not None:  # traversing until current node is none
             count += 1
@@ -32,9 +32,9 @@ class DoublyLinkedList:
             print("Empty Doubly Linked List")
         else:
             newNode = self.head
-            while newNode.getNext() is not None:  # traversing to last node in the list
+            while newNode.getNext() is not None:  # traversing until next of newNode is none
                 newNode = newNode.getNext()  # change next of new node as new node
-            while newNode is not None:  # traversing until first node in the list
+            while newNode is not None:  # traversing until newNode is none
                 print(newNode.getData(), end=" ")  # print data of new node
                 newNode = newNode.getPrev()  # change previous of new node as new node
 
@@ -59,7 +59,7 @@ class DoublyLinkedList:
             self.head = newNode
         else:
             current = self.head
-            while current.getNext() is not None:  # traversing until the last node in the list
+            while current.getNext() is not None:  # traversing until next of current is none
                 current = current.getNext()  # change next of current as current
             current.setNext(newNode)  # create next of current as new node
             newNode.setPrev(current)  # create previous of new node as current
@@ -105,7 +105,7 @@ class DoublyLinkedList:
         else:
             current = self.head
             previous = None  # create previous node as none
-            while current.getNext() is not None:  # traversing until the last node in the list
+            while current.getNext() is not None:  # traversing until next of current is none
                 previous = current  # change current as previous
                 current = current.getNext()  # change next of current as current
             previous.setNext(None)  # create next of previous as none
